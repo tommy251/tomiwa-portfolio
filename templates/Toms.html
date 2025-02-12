@@ -3,72 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomiwa Babatunde - Social Media Marketing</title>
+    <title>Tomiwa Babatunde - Portfolio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 </head>
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <header>
-        <h1>Tomiwa Babatunde</h1>
-        <p>Social Media Marketing Expert</p>
-    </header>
-
-    <!-- Flash Messages -->
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="flash {{ category }}">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I specialize in increasing social media reach for companies. Here are some of my achievements:</p>
-        <ul>
-            <li>Increased CoreMars' reach from 50 to 4.2k in 1 months.</li>
-            <li>Increased Bosah Oak Roe's reach from 0 to 5.4k in 2 months.</li>
-        </ul>
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade-up">
+        <div class="hero-content">
+            <h1>Increase Your Social Media Reach</h1>
+            <p>Helping businesses grow their online presence with proven strategies.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
     </section>
 
-    <div class="portfolio-item">
-        <h3>CoreMars</h3>
-        <div class="image-grid">
-            <img src="{{ url_for('static', filename='WhatsApp Image 2025-02-04 at 04.19.03_69c1d1e7.jpg') }}" alt="CoreMars instagram page">
-            <img src="{{ url_for('static', filename='WhatsApp Image 2025-02-07 at 17.31.56_f3682b36.jpg') }}" alt="CoreMars instagram reach analysis ">
-            <img src="{{ url_for('static', filename='coremars post.jpg') }}" alt="CoreMars instagram post">
+    <!-- Features Section -->
+    <section class="features" data-aos="fade-up">
+        <div class="feature">
+            <i class="fas fa-chart-line"></i>
+            <h2>Data-Driven Strategies</h2>
+            <p>We use analytics to optimize your social media campaigns.</p>
         </div>
-    </div>
-
-    <!-- Bosah Oak Roe Project -->
-    <div class="portfolio-item">
-        <h3>Bosah Oak Roe</h3>
-        <div class="image-grid">
-            <img src="{{ url_for('static', filename='WhatsApp Image 2025-02-04 at 04.19.06_ce8de0e6.jpg') }}" alt="Bosah Oak Roe Screenshot 1">
-            <img src="{{ url_for('static', filename='WhatsApp Image 2025-02-07 at 17.31.53_6511caa8.jpg') }}" alt="Bosah Oak Roe instagram reach instagram">
-            <img src="{{ url_for('static', filename='bosah post.jpg') }}" alt="Bosah Oak Roe instagram post">
+        <div class="feature">
+            <i class="fas fa-users"></i>
+            <h2>Audience Engagement</h2>
+            <p>Boost interaction and build a loyal community.</p>
         </div>
-    </div>
-</section>
+        <div class="feature">
+            <i class="fas fa-rocket"></i>
+            <h2>Rapid Growth</h2>
+            <p>See results in as little as 2 months.</p>
+        </div>
+    </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials" data-aos="fade-up">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"Tomiwa helped us increase our reach from 77 to 4.4k in just 2 months!"</p>
+            <p>- CoreMars Team</p>
+        </div>
+        <div class="testimonial">
+            <p>"Our social media presence went from 0 to 6.2k followers. Highly recommended!"</p>
+            <p>- Bosah Oak Roe</p>
+        </div>
+    </section>
 
-    <section id="contact">
+    <!-- Image Scroller Section -->
+    <section class="image-scroller" data-aos="fade-up">
+        <h2>Our Work</h2>
+        <div class="scroller-container">
+            <div class="scroller">
+                <div class="scroller-item">
+                    <img src="{{ url_for('static', filename='WhatsApp Image 2025-02-04 at 04.19.03_69c1d1e7.jpg') }}" alt="CoreMars Screenshot 1">
+                    <p>CoreMars - Social Media Growth</p>
+                </div>
+                <div class="scroller-item">
+                    <img src="{{ url_for('static', filename='WhatsApp Image 2025-02-07 at 17.31.56_f3682b36.jpg') }}" alt="CoreMars Screenshot 2">
+                    <p>CoreMars - Engagement Boost</p>
+                </div>
+                <div class="scroller-item">
+                    <img src="{{ url_for('static', filename='WhatsApp Image 2025-02-04 at 04.19.06_ce8de0e6.jpg') }}" alt="Bosah Oak Roe Screenshot 1">
+                    <p>Bosah Oak Roe - Follower Growth</p>
+                </div>
+                <div class="scroller-item">
+                    <img src="{{ url_for('static', filename='WhatsApp Image 2025-02-07 at 17.31.53_6511caa8.jpg') }}" alt="Bosah Oak Roe Screenshot 2">
+                    <p>Bosah Oak Roe - Campaign Success</p>
+                </div>
+                <!-- Add more images as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" data-aos="fade-up">
         <h2>Contact Me</h2>
         <form action="/send_email" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Tomiwa Babatunde. All rights reserved.</p>
+    <!-- Footer -->
+    <footer data-aos="fade-up">
+        <p>&copy; 2023 Tomiwa Babatunde. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
+
+    <!-- Initialize AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true, // Animate only once
+        });
+    </script>
+
+    <!-- Scroller Script -->
+    <script>
+        const scroller = document.querySelector('.scroller');
+        const scrollerContent = document.querySelector('.scroller').innerHTML;
+
+        // Duplicate the content for seamless scrolling
+        scroller.innerHTML += scrollerContent;
+
+        // Pause animation on hover
+        scroller.addEventListener('mouseenter', () => {
+            scroller.style.animationPlayState = 'paused';
+        });
+
+        // Resume animation on mouse leave
+        scroller.addEventListener('mouseleave', () => {
+            scroller.style.animationPlayState = 'running';
+        });
+    </script>
 </body>
 </html>
