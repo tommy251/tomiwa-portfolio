@@ -170,6 +170,17 @@
             scroller.style.animationPlayState = 'running';
         });
     </script>
+    <script>
+    const projectVideos = document.querySelectorAll('.project-video');
+    projectVideos.forEach(video => {
+        video.addEventListener('mouseenter', () => {
+            video.pause();
+        });
+        video.addEventListener('mouseleave', () => {
+            video.play();
+        });
+    });
+</script>
     
 </body>
 </html>
