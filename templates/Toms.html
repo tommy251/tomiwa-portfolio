@@ -85,6 +85,42 @@
             </div>
         </div>
     </section>
+    <!-- Past Projects Section with Videos -->
+<section class="past-projects" data-aos="fade-up">
+    <h2>Past Projects</h2>
+    <div class="projects-container">
+        <!-- BTrave Holiday -->
+        <div class="project-item">
+            <h3>BTrave Holiday</h3>
+            <p><strong>KPI:</strong> Promote travel packages through engaging video content.</p>
+            <div class="video-wrapper">
+                <video autoplay muted loop class="project-video">
+                    <source src="{{ url_for('static', filename='fifa1.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video autoplay muted loop class="project-video">
+                    <source src="{{ url_for('static', filename='fifa2.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <!-- Inbranded -->
+        <div class="project-item">
+            <h3>Inbranded</h3>
+            <p><strong>KPI:</strong> Create captions and promotional videos to boost brand visibility.</p>
+            <div class="video-wrapper">
+                <video autoplay muted loop class="project-video">
+                    <source src="{{ url_for('static', filename='inb1.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video autoplay muted loop class="project-video">
+                    <source src="{{ url_for('static', filename='inb2.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact" data-aos="fade-up">
@@ -134,5 +170,6 @@
             scroller.style.animationPlayState = 'running';
         });
     </script>
+    
 </body>
 </html>
