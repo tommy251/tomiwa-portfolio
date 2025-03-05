@@ -263,3 +263,59 @@ footer {
 .social-links a:hover {
     color: #2575fc;
 }
+/* Past Projects Section */
+.past-projects {
+    padding: 100px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.past-projects h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.project-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2575fc; /* Blue color for headings */
+}
+
+.project-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.project-item strong {
+    color: #ff4a3d; /* Red color for KPI emphasis */
+}
+
+.video-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
