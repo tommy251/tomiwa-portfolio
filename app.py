@@ -1,4 +1,3 @@
-from flask import Flask, render_template
 from flask import Flask, render_template, request, redirect, flash
 from flask_mail import Mail, Message
 
