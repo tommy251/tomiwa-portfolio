@@ -16,6 +16,9 @@
             Your browser does not support the video tag.
         </video>
         <img src="{{ url_for('static', filename='hero-background.jpg') }}" alt="Hero Background" class="mobile-image" />
+        <div class="video-container">
+            <button class="play-button" onclick="document.getElementById('bg-video').play()">Play Video</button>
+        </div>
         <div class="hero-content">
             <h1>Increase Your Social Media Reach</h1>
             <p>Helping businesses grow their online presence with proven strategies.</p>
@@ -29,6 +32,7 @@
             <source src="{{ url_for('static', filename='10145286-hd_1080_1920_30fps.mp4') }}" type="video/mp4" loading="lazy">
             Your browser does not support the video tag.
         </video>
+        <img src="{{ url_for('static', filename='features-background.jpg') }}" alt="Features Background" class="mobile-image" />
         <div class="features-content">
             <div class="feature">
                 <i class="fas fa-chart-line"></i>
