@@ -12,20 +12,27 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Hero Section with Video Background */
-.hero {
+/* Hero and Features Section (Video Backgrounds) */
+.hero, .features {
     position: relative;
     overflow: hidden;
     text-align: center;
     padding: 100px 20px;
-    height: 100vh; /* Full viewport height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #fff; /* White text for better contrast */
 }
 
-#bg-video {
+.hero {
+    height: 100vh; /* Full viewport height on desktop */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.features {
+    padding: 100px 20px;
+}
+
+#bg-video, #features-bg-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,10 +42,10 @@ html {
     height: auto;
     z-index: -1;
     transform: translate(-50%, -50%);
-    object-fit: cover; /* Ensures the video covers the entire background */
+    object-fit: cover; /* Default: covers the area, may crop */
 }
 
-.hero-content {
+.hero-content, .features-content {
     position: relative;
     z-index: 1;
 }
@@ -67,31 +74,7 @@ html {
     background: #ff4a3d; /* Red hover effect */
 }
 
-/* Features Section with Video Background */
-.features {
-    position: relative;
-    overflow: hidden;
-    padding: 100px 20px;
-    text-align: center;
-    color: #fff; /* White text for better contrast */
-}
-
-#features-bg-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    object-fit: cover; /* Ensures the video covers the entire background */
-}
-
 .features-content {
-    position: relative;
-    z-index: 1;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -206,6 +189,67 @@ html {
     }
 }
 
+/* Past Projects Section */
+.past-projects {
+    padding: 100px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.past-projects h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.project-item {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2575fc; /* Blue color for headings */
+}
+
+.project-item p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.project-item strong {
+    color: #ff4a3d; /* Red color for KPI emphasis */
+}
+
+.video-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-video:hover {
+    animation-play-state: paused; /* Pause on hover */
+}
+
 /* Contact Section */
 .contact {
     padding: 100px 20px;
@@ -263,59 +307,55 @@ footer {
 .social-links a:hover {
     color: #2575fc;
 }
-/* Past Projects Section */
-.past-projects {
-    padding: 100px 20px;
-    background: #fff;
-    text-align: center;
+
+/* Video Container and Play Button */
+.video-container {
+    position: relative;
 }
 
-.past-projects h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
 }
 
-.projects-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
+.play-button:hover {
+    background: rgba(0, 0, 0, 0.9);
 }
 
-.project-item {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero, .features {
+        padding: 20px 10px;
+        min-height: 50vh; /* Adjust to a smaller height for mobile */
+    }
 
-.project-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #2575fc; /* Blue color for headings */
-}
+    #bg-video, #features-bg-video {
+        object-fit: contain; /* Contains the video, no cropping, may leave black bars */
+        width: 100%;
+        height: 100%;
+    }
 
-.project-item p {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 15px;
-}
+    .desktop-video {
+        display: none;
+    }
 
-.project-item strong {
-    color: #ff4a3d; /* Red color for KPI emphasis */
-}
-
-.video-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.project-video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .mobile-image {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
 }
